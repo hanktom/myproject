@@ -1,5 +1,7 @@
 package com.tom;
 
+import java.util.Scanner;
+
 public class Person {
 	float weight;
 	float height;
@@ -18,6 +20,13 @@ public class Person {
 	}
 	
 	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+//		System.out.println(scanner.nextLine());
+		String s = scanner.nextLine();
+		
+		
+		
+		/*
 		Person p = new Person(65.5f, 1.7f);
 		System.out.println(p.bmi());
 //		p.sayHello();
@@ -28,5 +37,6 @@ public class Person {
 		float h = 1.7f;
 		float bmi = w/(h*h);
 		System.out.println(bmi);
+		*/
 	}
 }
