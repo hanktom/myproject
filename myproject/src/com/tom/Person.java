@@ -13,7 +13,7 @@ public class Person {
 
 	public float bmi(){
 		bmi = weight/(height*height);
-		return bmi;
+		return bmi; 
 	}
 	
 	public void advice(){
