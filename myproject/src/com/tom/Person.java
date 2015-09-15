@@ -19,6 +19,14 @@ public class Person {
 	public void advice(){
 		if (bmi < 18.5){
 			System.out.println("該多吃點了");
+		}else {
+			if ( bmi>=18.5 && bmi<=24){
+				System.out.println("正常");
+			}else{
+				System.out.println("要多運動了");
+				
+			}
+			
 		}
 	}
 	
