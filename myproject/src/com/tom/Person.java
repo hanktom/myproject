@@ -22,17 +22,12 @@ public class Person {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("請輸入姓名:");
-		String s = scanner.nextLine();
-		System.out.println(s+"您好");
-		
+		String name = scanner.nextLine();
+		System.out.println(name+"您好");
 		System.out.print("請輸入體重:");
-//		String s2 = scanner.nextLine();
-//		float w = Float.parseFloat(s2);
 		float w = scanner.nextFloat();
-		
 		System.out.print("請輸入身高(公尺):");
-		String s3 = scanner.nextLine();
-		float h = Float.parseFloat(s3);
+		float h = scanner.nextFloat();
 		
 		Person p = new Person(w, h);
 		System.out.println(p.bmi());
