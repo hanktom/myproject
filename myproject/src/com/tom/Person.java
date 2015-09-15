@@ -5,14 +5,21 @@ import java.util.Scanner;
 public class Person {
 	float weight;
 	float height;
+	float bmi;
 	public Person(float w, float h){
 		weight = w;
 		height = h;
 	}
 
 	public float bmi(){
-		float bmi = weight/(height*height);
+		bmi = weight/(height*height);
 		return bmi;
+	}
+	
+	public void advice(){
+		if (bmi < 18.5){
+			System.out.println("該多吃點了");
+		}
 	}
 	
 	public void sayHello(){
@@ -31,8 +38,7 @@ public class Person {
 		
 		Person p = new Person(w, h);
 		System.out.println(p.bmi());
-		
-		
+		p.advice();
 		
 		
 		/*
