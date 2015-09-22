@@ -5,10 +5,10 @@ public class Student {
 	int chinese;
 	int math;
 	static int pass = 60;
-	public Student(int eng, int chi, int m){
-		english = eng;
-		chinese = chi;
-		math = m;
+	public Student(int english, int chinese, int math){
+		this.english = english;
+		this.chinese = chinese;
+		this.math = math;
 	}
 	
 	public float average(){
