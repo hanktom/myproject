@@ -28,14 +28,17 @@ public class Student {
 		Student stu1 = new Student(66, 77, 88);
 		Student stu2 = new Student(68, 33, 51);
 		Student stu3 = new Student(90, 94, 97);
-		System.out.println(stu1.pass);
-		Student.pass = 55;
+		GraduateStudent gstu = new GraduateStudent(55, 76, 73, 80);
+		System.out.println(gstu.pass);
+//		System.out.println(stu1.pass);
+//		Student.pass = 55;
 //		stu1.pass
-		System.out.println(stu1.pass);
-		System.out.println(stu2.pass);
-//		stu1.report();
-//		stu2.report();
-//		stu3.report();
+//		System.out.println(stu1.pass);
+//		System.out.println(stu2.pass);
+		stu1.report();
+		stu2.report();
+		stu3.report();
+		gstu.report();
 		
 //		System.out.println(stu.average());
 	}
