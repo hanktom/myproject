@@ -17,7 +17,8 @@ public class GraduateStudent extends Student {
 		if (average()<pass){
 			star = "*";
 		}
-		System.out.println(english+"\t"+chinese+"\t"+math+"\t"+average()+star+"\t"+thesis);
+		System.out.println(english+"\t"+chinese+"\t"+math+"\t"
+		+average()+star+"\t"+thesis);
 	}
 
 	
