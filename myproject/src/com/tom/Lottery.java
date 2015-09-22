@@ -2,7 +2,7 @@ package com.tom;
 
 import java.util.Random;
 
-public class Lottery {
+public class Lottery{
 	int[] nums = new int[5];
 	
 	public Lottery(){
