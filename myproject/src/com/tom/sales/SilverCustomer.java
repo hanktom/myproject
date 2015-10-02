@@ -1,7 +1,7 @@
 package com.tom.sales;
 
 public class SilverCustomer extends Customer {
-//	float discount = 0.1f;
+	float discount = 0.1f;
 //	int discountLimit = 10000;
 	@Override
 	public int calculcate(int amount) {
@@ -13,7 +13,9 @@ public class SilverCustomer extends Customer {
 			n = amount;
 		}
 		*/
-		return (amount>=discountLimit) ? amount-(int)(amount*discount): amount;
+		int n = (amount>=discountLimit) ? amount-(int)(amount*discount):amount;
+		System.out.println(amount+"\t"+n);
+		return n;
 	}
 
 }

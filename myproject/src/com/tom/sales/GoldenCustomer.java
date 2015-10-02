@@ -7,8 +7,10 @@ public class GoldenCustomer extends SilverCustomer {
 	public int calculcate(int amount) {
 		// TODO Auto-generated method stub
 		returnMoney = (int)(amount*0.05f);
-		
-		return super.calculcate(amount);
+		int n = super.calculcate(amount);
+		System.out.println(amount+"\t"+n+"\t("+returnMoney+")");
+				
+		return n;
 	}
 	
 	
