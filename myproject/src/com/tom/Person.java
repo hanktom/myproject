@@ -6,6 +6,7 @@ public class Person {
 	float weight;
 	float height;
 	float bmi;
+	
 	public Person(float w, float h){
 		weight = w;
 		height = h;
@@ -47,7 +48,7 @@ public class Person {
 		Person p = new Person(w, h);
 		System.out.println(p.bmi());
 		p.advice();
-		
+		System.out.println(p.hashCode());
 		
 		/*
 		Person p = new Person(65.5f, 1.7f);
