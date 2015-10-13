@@ -1,4 +1,4 @@
-package com.tom;
+package com.tom.collections;
 
 import java.util.HashSet;
 import java.util.Iterator;

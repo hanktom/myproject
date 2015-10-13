@@ -1,4 +1,4 @@
-package com.tom;
+package com.tom.collections;
 
 import java.util.HashMap;
 import java.util.Map;
