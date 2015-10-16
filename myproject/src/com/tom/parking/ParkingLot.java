@@ -19,8 +19,12 @@ public class ParkingLot {
 		map.put(c.id, c);
 	}
 	
-	public int remove(Car c){
-		
+	public int remove(String id, String leave){
+		if (map.containsKey(id)){
+			Car c = map.get(id);
+			int mins = c.leave(leave);
+			return (int)Math.ceil(mins/60.0)*rate;
+		}
 		return 0;
 	}
 	
@@ -34,16 +38,15 @@ public class ParkingLot {
 				System.out.println(line);
 				String[] ss = line.split(",");
 				String type = ss[0];
-				String id = ss[1];
-				String time = ss[2];
+				String id = ss[2];
+				String time = ss[1];
 				if (type.equals("1")){
-					
+					int fee = lot.remove(id, time);
+					System.out.println("fee:"+fee);
 				}else{
 					Car c = new Car(id, time);
 					lot.add(c);
 				}
-				
-				
 				new Scanner(System.in).nextLine();
 				line = in.readLine();
 			}
