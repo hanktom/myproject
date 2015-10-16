@@ -27,10 +27,14 @@ public class Person {
 				System.out.println("要多運動了");
 				
 			}
-			
 		}
 	}
 	
+	@Override
+	public String toString() {
+		return weight+"/"+height;
+	}
+
 	public void sayHello(){
 		System.out.println("Hello World");
 	}
@@ -49,6 +53,7 @@ public class Person {
 		System.out.println(p.bmi());
 		p.advice();
 		System.out.println(p.hashCode());
+		System.out.println(p);
 		
 		/*
 		Person p = new Person(65.5f, 1.7f);
