@@ -10,12 +10,13 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class ParkingLot {
 	int rate = 30;
-	Map<String, Date> map = new HashMap<>();
+	Map<String, Car> map = new HashMap<>();
 	public void add(Car c){
-		
+		map.put(c.id, c);
 	}
 	
 	public int remove(Car c){
@@ -24,12 +25,24 @@ public class ParkingLot {
 	}
 	
 	public static void main(String[] args) {
+		ParkingLot lot = new ParkingLot();
 		try {
 			FileReader fr = new FileReader("parking-data2.txt");
 			BufferedReader in = new BufferedReader(fr);
 			String line = in.readLine();
 			while(line!=null){
 				System.out.println(line);
+				String[] ss = line.split(",");
+				String type = ss[0];
+				String id = ss[1];
+				String time = ss[2];
+				if (type.equals("1")){
+					
+				}else{
+					Car c = new Car(id, time);
+					lot.add(c);
+				}
+				
 				
 				new Scanner(System.in).nextLine();
 				line = in.readLine();
