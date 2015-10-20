@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class MySqlTester {
@@ -19,7 +20,8 @@ public class MySqlTester {
 			while(rs.next()){
 				int id = rs.getInt("id");
 				String carId = rs.getString("car_id");
-				Date d = rs.getDate("ctime");
+				Timestamp ts = rs.getTimestamp("ctime");
+				Date d = new Date(ts.getTime());
 				int type = rs.getInt("type");
 				System.out.println(id+"/"+carId+"/"+d+"/"+type);
 			}
