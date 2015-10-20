@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 
 public class MySqlTester {
 
@@ -15,8 +16,15 @@ public class MySqlTester {
 					"jdbc:mysql://j.snpy.org/java1?user=java1&password=jjaa989");
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from parking");
-			
-			
+			while(rs.next()){
+				int id = rs.getInt("id");
+				String carId = rs.getString("car_id");
+				Date d = rs.getDate("ctime");
+				int type = rs.getInt("type");
+				System.out.println(id+"/"+carId+"/"+d+"/"+type);
+			}
+			stmt.close();
+			conn.close();
 			
 		} catch (InstantiationException e) {
 			// TODO Auto-generated catch block
