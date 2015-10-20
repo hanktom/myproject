@@ -19,6 +19,15 @@ public class ParkingLot {
 		map.put(c.id, c);
 	}
 	
+	public int remove(String id, Date leaveTime){
+		if (map.containsKey(id)){
+			Car c = map.get(id);
+			int mins = c.leave(leaveTime);
+			return (int)Math.ceil(mins/60.0)*rate;
+		}
+		return 0;
+	}
+	
 	public int remove(String id, String leave){
 		if (map.containsKey(id)){
 			Car c = map.get(id);

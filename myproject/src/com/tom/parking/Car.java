@@ -9,6 +9,15 @@ public class Car {
 	static SimpleDateFormat sdf = new SimpleDateFormat("HHmm");
 	String id;
 	String enter;
+	Date enterTime;
+	
+	
+	
+	public Car(String id, Date enterTime) {
+		super();
+		this.id = id;
+		this.enterTime = enterTime;
+	}
 	public Car(String id, String enter) {
 		super();
 		this.id = id;
@@ -34,4 +43,10 @@ public class Car {
 		return mins;
 		
 	}
+	
+	public int leave(Date leaveTime){
+		int mins = (int)((leaveTime.getTime()-enterTime.getTime())/(60*1000));
+		return mins;
+	}
+	
 }
