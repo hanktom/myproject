@@ -11,8 +11,6 @@ public class Car {
 	String enter;
 	Date enterTime;
 	
-	
-	
 	public Car(String id, Date enterTime) {
 		super();
 		this.id = id;
