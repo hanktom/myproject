@@ -21,15 +21,12 @@ public class MyFrame extends JFrame implements ActionListener{
 		//MyActionListener listener = new MyActionListener(this);
 //		InnerActionListener listener = new InnerActionListener();
 //		b.addActionListener(listener);
-//		b.addActionListener(new ActionListener() {
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				System.out.println("Anony");
-//				info.setText("DDD");
-//				
-//				
-//			}
-//		});
+		b.addActionListener(
+			e->{
+				System.out.println("Anony");
+				info.setText("DDD");
+			}
+		);
 		b.addActionListener(this);
 		
 		setVisible(true);
