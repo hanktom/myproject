@@ -1,10 +1,12 @@
 package com.tom.movie;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Movie {
@@ -24,6 +26,31 @@ public class Movie {
 		this.duration = duration;
 	}
 	
+	public List<Play> listPlays(){
+		List<Play> plays = new ArrayList<Play>();
+		Connection conn = DBUtil.getConnection();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement("select * from plays where movie_id=?");
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			int i=1;
+			while(rs.next()){
+				int id = rs.getInt("id");
+				int movieId = rs.getInt("movie_id");
+				Date time = rs.getTimestamp("time");
+				Play p = new Play(id, movieId, time);
+				plays.add(p);
+				System.out.println(i+". "+Play.sdf.format(p.getTime()));
+				i++;
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return plays;
+	}
+	
 	public static List<Movie> getAllMovies(){
 		List<Movie> movies = new ArrayList<Movie>();
 		Connection conn = DBUtil.getConnection();
@@ -35,7 +62,7 @@ public class Movie {
 				String name = rs.getString("name");
 				String cast = rs.getString("cast");
 				int rate = rs.getInt("rate");
-				String intro = rs.getString("instro");
+				String intro = rs.getString("intro");
 				int duration = rs.getInt("duration");
 				Movie m = new Movie(id, name, cast, rate, intro, duration);
 				movies.add(m);
