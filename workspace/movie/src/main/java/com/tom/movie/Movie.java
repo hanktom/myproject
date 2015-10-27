@@ -1,5 +1,12 @@
 package com.tom.movie;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Movie {
 	int id;
 	String name;
@@ -16,6 +23,34 @@ public class Movie {
 		this.intro = intro;
 		this.duration = duration;
 	}
+	
+	public static List<Movie> getAllMovies(){
+		List<Movie> movies = new ArrayList<Movie>();
+		Connection conn = DBUtil.getConnection();
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from movies");
+			while(rs.next()){
+				int id = rs.getInt("id");
+				String name = rs.getString("name");
+				String cast = rs.getString("cast");
+				int rate = rs.getInt("rate");
+				String intro = rs.getString("instro");
+				int duration = rs.getInt("duration");
+				Movie m = new Movie(id, name, cast, rate, intro, duration);
+				movies.add(m);
+			}
+			stmt.close();
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return movies;
+	}
+	
 	public int getId() {
 		return id;
 	}
