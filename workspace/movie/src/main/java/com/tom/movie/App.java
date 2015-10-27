@@ -21,6 +21,11 @@ public class App
         int index = Integer.parseInt(input.nextLine());
         Movie movie = movies.get(index-1);
         List<Play> plays = movie.listPlays();
-        
+        int playIndex = Integer.parseInt(input.nextLine());
+        Play play = plays.get(playIndex-1);
+        System.out.print("請輸入欲購買的張數:");
+        int num = Integer.parseInt(input.nextLine());
+        List<Integer> tickets = play.reserve(num);
+        System.out.println("票:"+tickets);
     }
 }
